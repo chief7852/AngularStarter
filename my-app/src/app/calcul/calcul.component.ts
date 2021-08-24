@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-calcul',
@@ -7,16 +8,12 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class CalculComponent implements OnInit {
 
-  @Input() num1!: number ;
-  @Input() num2!: number ;
-  @Input() formula! : String;
-  @Output() result! : number | String;
-
-  recalcul() {this.calcula();}
+//  num1 = new FormControl('');
+//  num2 = new FormControl('');
 
   constructor() { }
 
-  calcula(){
+  calcula(cul:string){
     // switch(this.formula){
     //   case '+':this.result = this.num1 + this.num2;
     //   console.log(this.result);
@@ -32,7 +29,9 @@ export class CalculComponent implements OnInit {
     //   default:
     //     break;
     // }
-    console.log(this.num1)
+    console.log(cul);
+    // console.log(this.num1);
+    // console.log(this.num2);
     
   }
   ngOnInit(): void {

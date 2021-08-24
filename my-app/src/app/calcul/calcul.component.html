@@ -1,6 +1,7 @@
-<input type="number" />
 
-<select>
+<!-- <input type="number" placeholder="num1" [formControl]="num1"/> -->
+
+<select #oper>
     <option>+</option>
     <option>-</option>
     <option>*</option>
@@ -8,8 +9,8 @@
     <option>%</option>
 </select>
 
-<input type="number" />
+<!-- <input type="number" placeholder="num2" [formControl]="num2"/> -->
 
-<button (click)="recalcul()">=</button>
+<button (click)="calcula(oper.value)">=</button>
 
 <input type="text" readonly value="[(result)]"/>
