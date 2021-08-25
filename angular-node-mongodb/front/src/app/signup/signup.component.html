@@ -1,0 +1,7 @@
+<form #signupForm="ngForm" (ngSubmit)="onSignUp(signupForm)" novalidate>
+    id:<input type="text" name="id" ngModel><br>
+    pass:<input type="password" name="password" ngModel><br>
+    name:<input type="text" name="name" ngModel><br>
+    email:<input type="text" name="email" ngModel><br>
+    <button>send</button>
+</form>
