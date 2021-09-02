@@ -9,12 +9,14 @@ export class SectionComponent implements OnInit {
 
   present = 'welcome';
 
+
+  commandText:any;
   constructor() { }
 
 
-  stratTime(time: any){
+  stratTime($event: any){
 
-    this.present = time;
+    this.present = $event;
     
   }
   ngOnInit(): void {

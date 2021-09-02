@@ -18,8 +18,9 @@ export class ButtonsComponent implements OnInit {
   }
 
 
-  start(){
-    this.clickEvent.emit();
+
+  executeButton(command: string){
+    this.clickEvent.emit(command);
     
   }
 }

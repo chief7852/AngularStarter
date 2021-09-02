@@ -10,7 +10,11 @@ export class TimeDisplayComponent implements OnInit {
 
   @Input() inputData!: string;
 
-  test = 1;
+  min: number = 0
+  sec: number = 0
+  ms: number = 0
+
+  timeInterval: any;
 
   constructor() {
     console.log(this.inputData)
@@ -21,13 +25,54 @@ export class TimeDisplayComponent implements OnInit {
 
     // }, 1000)
 
-   }
+  }
   ngOnInit(): void {
     throw new Error('Method not implemented.');
   }
 
-   ngOnChanges(changes: SimpleChange){
-     console.log(changes);
 
+  timeStart() {
+
+
+    this.timeInterval = setInterval(() => {
+      this.ms++;
+    }, 10)
+    // clearInterval();
+
+  }
+
+  timeStop() {
+
+    clearInterval(this.timeInterval);
+
+  }
+
+  timeReset() {
+    this.timeStop();
+    this.ms = 0;
+  }
+
+
+
+  ngOnChanges(changes: SimpleChange) {
+
+    for (let propName in changes) {
+
+      if (propName == 'inputData') {
+        switch (this.inputData) {
+          case 'start':
+            this.timeStart();
+            break;
+          case 'stop':
+            this.timeStop();
+            break;
+          case 'reset':
+            this.timeReset();
+            break;
+        }
+
+
+      }
+    }
   }
 }
