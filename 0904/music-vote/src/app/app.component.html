@@ -1,0 +1,17 @@
+<mat-form-field>
+  <input  matInput  placeholder="음악제목" #newTitle>  
+</mat-form-field>
+<mat-form-field>
+  <input  matInput  placeholder="가수" #newArtist>  
+</mat-form-field>
+<button  mat-raised-button  color="primary" (click)="fnAddMusic(newTitle, newArtist)">등록하기</button>  
+
+
+<mat-list>
+  <mat-list-item *ngFor="let request of requests">
+    <h1 matLine><b>{{request.votes}}</b></h1>
+    <p matLine>
+      <span>Title : {{request.title}}</span>
+    </p>
+  </mat-list-item>
+</mat-list>

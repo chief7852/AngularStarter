@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable(
+// @Injectable({
+  // providedIn: 'root'
+// })
+)
 export class GreetingService {
 
   constructor() { }
