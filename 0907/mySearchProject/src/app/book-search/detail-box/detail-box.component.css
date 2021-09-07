@@ -1,0 +1,18 @@
+.example-card{
+  width: 500px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.example-header-image{
+  background-image: url('/assets/images/KakaoTalk_20210823_175253944_01.jpg');
+  background-size: cover;
+}
+
+.book-image{
+  width: 100px;
+}
+
+.detail-header-style{
+  font-family: Georgia;
+}
