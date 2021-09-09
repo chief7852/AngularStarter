@@ -20,7 +20,7 @@
         (ngModelChange)="changeValue(bookCategorySelect.value)">
         <mat-option *ngFor="let category of bookCategory"
               [value]="category.value">
-              
+              {{ category.viewValue }}
             </mat-option>
       </mat-select>
     </mat-form-field>
@@ -34,6 +34,9 @@
 
     <app-search-box [bookCategory]="displayCategoryName"
       (searchEvent)="changeTitleBar($event)"  >
+      <p>Content Projection!</p>
+      <p>First Paragraph</p>
+      <p>Second Paragraph</p>
   </app-search-box>
 
   </div>

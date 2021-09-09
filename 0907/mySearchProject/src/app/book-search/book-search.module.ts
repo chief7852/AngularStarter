@@ -21,7 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BookSearchMainComponent,
     SearchBoxComponent,
     DetailBoxComponent,
-    ListBoxComponent
+    ListBoxComponent,
+    
   ],
   imports: [
     CommonModule,
