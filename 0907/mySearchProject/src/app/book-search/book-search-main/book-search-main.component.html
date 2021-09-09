@@ -6,26 +6,35 @@
 
     <div class="lh-100">
 
-      <h5 class="mb-0 text-white lh-100">Search Result</h5>
+      <h5 #resultStatus class="mb-0 text-white lh-100">Search Result : {{searchTitle}}</h5>
 
     </div>
 
   </div>
 
-  <div class="form-group col-md-4"> <label for="inputState">도서 종류</label> 
-    
-    <select id="inputState" class="form-control">
-      <option selected>선택하세요...</option>
-      <option>국내외도서</option>
-      <option>국내도서</option>
-      <option>국외도서</option>
-    </select> 
-    
+  <div class="example-container">
+    <mat-form-field>
+      <mat-select placeholder="도서종류" 
+        #bookCategorySelect
+        [(ngModel)]="selectedValue"
+        (ngModelChange)="changeValue(bookCategorySelect.value)">
+        <mat-option *ngFor="let category of bookCategory"
+              [value]="category.value">
+              
+            </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary"
+        (click)="clearCondition()">검색 초기화</button>
+    <button mat-raised-button color="primary" (click)="changeDOM()">DOM 직접 변경</button>
   </div>
 
   <div>
 
-    <app-search-box></app-search-box>
+    <app-search-box [bookCategory]="displayCategoryName"
+      (searchEvent)="changeTitleBar($event)"  >
+  </app-search-box>
 
   </div>
 
