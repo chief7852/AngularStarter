@@ -2,21 +2,33 @@
 
   <mat-card class="box">
     <mat-card-header>
-      <mat-card-title>Sign In</mat-card-title>
+      <mat-card-title>로그인</mat-card-title>
     </mat-card-header>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit($event)"  class="example-form">
       <mat-card-content>
         <mat-form-field class="example-full-width">
-          <input matInput placeholder="userId" formControlName="userId">
+          <input matInput [(ngModel)]="userId" placeholder="userId" formControlName="userId">
         </mat-form-field>
-
+        
         <mat-form-field class="example-full-width">
-          <input matInput type="password" placeholder="Password" formControlName="userPassword">
+          <input matInput type="password" [(ngModel)]="userPassword" placeholder="Password" formControlName="userPassword">
         </mat-form-field>
       </mat-card-content>
       
-      <button mat-stroked-button color="accent" type="submit"  class="btn-block">Sign-in</button>
+      <div class="button-aria">
+        <button mat-raised-button color="accent" type="submit"  class="btn-block">로그인</button>
+        <button mat-raised-button color="accent" [routerLink]="['/signup']" type="button"  class="btn-block">회원가입</button>
+      </div><br>
+      <mat-card-header>
+      <mat-card-title>소셜로그인</mat-card-title>
+    </mat-card-header>
+      <mat-card-footer>
+        
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a style="margin-bottom: 3%;" href="#" class="fa fa-google"></a>
+    </mat-card-footer>
     </form>
   </mat-card>
 
