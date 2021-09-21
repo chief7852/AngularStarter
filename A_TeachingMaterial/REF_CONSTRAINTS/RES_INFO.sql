@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Ref Constraints for Table RES_INFO
+--------------------------------------------------------
+
+  ALTER TABLE "TEAM4_202011F"."RES_INFO" ADD CONSTRAINT "FK_RESERVE_TO_RES_INFO" FOREIGN KEY ("RES_CODE")
+	  REFERENCES "TEAM4_202011F"."RESERVE" ("RES_CODE") ENABLE;
+  ALTER TABLE "TEAM4_202011F"."RES_INFO" ADD CONSTRAINT "FK_TICKET_TO_RES_INFO" FOREIGN KEY ("TICKET_ID")
+	  REFERENCES "TEAM4_202011F"."TICKET" ("TICKET_ID") ENABLE;

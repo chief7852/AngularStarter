@@ -1,0 +1,24 @@
+REM INSERTING into TEAM4_202011F.FACILITIES
+SET DEFINE OFF;
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190001','더블 스윙 슬라이드','AT','/resources/emp-img/attraction/dubleswing.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190002','레프팅 슬라이드','AT','/resources/emp-img/attraction/bodyslid.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190003','자이언트 부메랑고','AT','/resources/emp-img/attraction/tubeslid.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190004','티키 풀','AT','/resources/emp-img/attraction/tikipool.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190005','플레이 풀','AT','/resources/emp-img/attraction/inplaypool.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190006','자이언트 아쿠아 플렉스','AT','/resources/emp-img/attraction/giantauqa.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190007','토네이도 슬라이드','AT','/resources/emp-img/attraction/toneidoslid.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190008','자이언트 웨이브','AT','/resources/emp-img/attraction/giantwave.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190009','래피드 리버','AT','/resources/emp-img/attraction/tikiriver.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190010','보라보라 푸드팰리스','SN',null);
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190011','피지 푸드팰리스','SN','/resources/emp-img/attraction/pigifood.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190012','사모아 푸드팰리스','SN','/resources/emp-img/attraction/samoafood.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190013','타히티 카페','SN','/resources/emp-img/attraction/tahiticafe.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190014','무레아 카페','SN','/resources/emp-img/attraction/muleacafe.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190015','망고식스','SN',null);
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190016','로티스엠포리엄','SV','/resources/emp-img/attraction/lotisemfor.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190017','로리스플라자','SV',null);
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190018','코나 카이 헛','SV',null);
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190019','카바나 렌탈샵','RS',null);
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190020','매표소1','TO','/resources/emp-img/attraction/ticketoffice.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190021','매표소2','TO','/resources/emp-img/attraction/ticketoffice.jpg');
+Insert into TEAM4_202011F.FACILITIES (FC_ID,FC_NAME,LFC_CODE,FC_PHOTO) values ('FC2105190022','매표소3','TO','/resources/emp-img/attraction/ticketoffice.jpg');

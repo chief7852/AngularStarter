@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Ref Constraints for Table FAC_MANAGE
+--------------------------------------------------------
+
+  ALTER TABLE "TEAM4_202011F"."FAC_MANAGE" ADD CONSTRAINT "FK_EMP_FAC_MANAGE" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "TEAM4_202011F"."EMP" ("EMP_ID") ENABLE;
+  ALTER TABLE "TEAM4_202011F"."FAC_MANAGE" ADD CONSTRAINT "FK_FACILITIES_FAC_MANAGE" FOREIGN KEY ("FC_ID")
+	  REFERENCES "TEAM4_202011F"."FACILITIES" ("FC_ID") ENABLE;
