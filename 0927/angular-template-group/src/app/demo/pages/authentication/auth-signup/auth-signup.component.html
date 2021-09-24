@@ -1,0 +1,58 @@
+<div class="auth-wrapper">
+  <div class="auth-content">
+    <div class="card">
+      <div class="row align-items-center text-center">
+        <div class="col-md-12">
+          <div class="card-body">
+            <h4 class="mb-3 f-w-400">회원가입</h4>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="feather icon-user"></i></span>
+              </div>
+              <input type="text" class="form-control" placeholder="이름">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="feather icon-mail"></i></span>
+              </div>
+              <input type="email" class="form-control" placeholder="이메일">
+            </div>
+            <div class="input-group mb-4">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="feather icon-lock"></i></span>
+              </div>
+              <input type="password" class="form-control" placeholder="비밀번호">
+            </div>
+            <div class="form-group text-left mt-2">
+              <div class="checkbox checkbox-primary d-inline">
+                <input type="checkbox" name="checkbox-fill-2" id="checkbox-fill-2">
+                <label for="checkbox-fill-2" class="cr">모든 <a data-toggle="modal" (click)="exampleModalLong.show()"> 약관</a>동의 하시겠습니까?</label>
+                <app-ui-modal #exampleModalLong>
+                  <div class="app-modal-header">
+                    <h5 class="modal-title">Modal Title</h5>
+                    <button type="button" class="close basic-close" data-dismiss="modal" aria-label="Close" (click)="exampleModalLong.hide()"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="app-modal-body">
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                    <p>여차저차해서</p>  
+                  </div>
+                  <div class="app-modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="exampleModalLong.hide()">동의하지 않음</button>
+                    <button type="button" class="btn btn-primary">동의</button>
+                  </div>
+                </app-ui-modal>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-block mb-4">Sign up</button>
+            <p class="mb-2">이미 회원이신가요? <a [routerLink]="['/auth/signin']" class="f-w-400">로그인</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
