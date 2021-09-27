@@ -170,13 +170,13 @@ const NavigationItems = [
     children: [
       {
         id: 'auth',
-        title: 'Authentication',
+        title: '회원관리',
         type: 'collapse',
         icon: 'feather icon-lock',
         children: [
           {
             id: 'signup',
-            title: 'Sign up',
+            title: '회원가입',
             type: 'item',
             url: '/auth/signup',
             target: true,
@@ -184,7 +184,7 @@ const NavigationItems = [
           },
           {
             id: 'signin',
-            title: 'Sign in',
+            title: '로그인',
             type: 'item',
             url: '/auth/signin',
             target: true,
@@ -194,9 +194,9 @@ const NavigationItems = [
       },
       {
         id: 'sample-page',
-        title: 'Sample Page',
+        title: '메인화면',
         type: 'item',
-        url: '/sample-page',
+        url: '/',
         classes: 'nav-item',
         icon: 'feather icon-sidebar'
       }
