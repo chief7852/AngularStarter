@@ -14,7 +14,7 @@ export class AuthSignupComponent implements OnInit {
   ) { 
     this.signupForm = this.fb.group({
       username : new FormControl(),
-      useremail : new FormControl('',[Validators.required, Validators.pattern(/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/)]),
+      useremail : new FormControl(),
       userpass: new FormControl(),
       usersave: new FormControl()
 
