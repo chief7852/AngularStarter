@@ -1,0 +1,140 @@
+<div class="modal-header">
+  <h4 class="modal-title">휴가신청서</h4>
+</div>
+
+<div class="modal-body">
+  <ui-approval-layout2 [title]="'휴가신청서'">
+    <div left-content>
+      <div class="page-content" [sub-responsive]="true">
+        <form [formGroup]="form">
+          <ui-card class="card-form" [col-md]="12">
+            <ui-card-header>
+              <ui-card-title>기본정보</ui-card-title>
+            </ui-card-header>
+            <ui-card-body>
+              <ui-row>
+                <ui-datepicker-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'REQST_DT'" [label]="'신청일자'"
+                  [desc]="" [placeholder]="''">
+                </ui-datepicker-field>
+                <ui-text-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'REQST_NO'" [label]="'신청번호'"
+                  [desc]="" [placeholder]="''" [disabled]="true">
+                </ui-text-field>
+                <app-sal-auto-complete [col-xs]="6" [col-sm]="4" [col-md]="2" #auto2 [controlName]="'EMP_NM'"
+                  [valueMap]="'EMP_NM:name, EMP-NO:no, APPLCL_CLSF:grade'"
+                  [displayFields]="['EMP_NM', 'EMP_NO', 'APPLCNT_CLSF']" [disabled]="true" [label]="'신청자'">
+                </app-sal-auto-complete>
+                <app-dept-auto-complete [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'DEPT_NM'"
+                  [valueMap]="'DEPT_NM:nm,DEPT_CD:cd'" [displayFields]="['DEPT_NM', 'DEPT_CD']" [disabled]="true"
+                  [label]="'부서'">
+                </app-dept-auto-complete>
+                <ui-text-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'VAC_USE_DT'" [label]="'휴가사용기간'"
+                  [desc]="" [placeholder]="''" [disabled]="true">
+                </ui-text-field>
+                <ui-datepicker-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'VAC_STDDE'"
+                  [label]="'휴가기준일'" [desc]="" [placeholder]="''" [disabled]="true">
+                </ui-datepicker-field>
+                <ui-text-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'TOT_YTYC'" [label]="'총연차'"
+                  [desc]="" [placeholder]="''" [disabled]="true">
+                </ui-text-field>
+                <ui-text-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'REMNDR_YRYC'" [label]="'잔여연차'"
+                  [desc]="" [placeholder]="''" [disabled]="true">
+                </ui-text-field>
+              </ui-row>
+            </ui-card-body>
+          </ui-card>
+          <ui-card class="card-form" [col-md]="12">
+            <ui-card-header>
+              <ui-card-title>신청정보</ui-card-title>
+            </ui-card-header>
+            <ui-card-body>
+              <ui-row>
+                <ui-select-field [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'VAC-CLS'"
+                  [datas]="[{value:'1', text: '연차휴가'},{value:'1', text:'포상휴가'},{value: '1', text:'병가'}]"
+                  [label]="'신청구분'">
+                </ui-select-field>
+                <app-sal-auto-complete [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'VAC_EMP_NM'"
+                  [valueMap]="'VAC_EMP_NM:name,VAC_EMP_NO:no,VAC_APPLCNT_CLSF:grade'"
+                  [displayFields]="['VAC_EMP_NM', 'VAC_EMP_NO','VAC_APPLCNT_CLSF']" [label]="'휴가자'">
+                </app-sal-auto-complete>
+                <app-dept-auto-complete [col-xs]="6" [col-sm]="4" [col-md]="2" [controlName]="'VAC_DEPT_NM'"
+                  [valueMap]="'VAC_DEPT_NM:nm,VAC_DEPT_CD:cd'" [displayFields]="['VAC_DEPT_NM', 'VAC_DEPT_CD']"
+                  [label]="'부서'">
+                </app-dept-auto-complete>
+                <app-sal-auto-complete [col-xs]="6" [col-sm]="4" [col-md]="2" #auto2
+                  [controlName]="'JOB_VAUS_EMP'"
+                  [valueMap]="'JOB_VAUS_EMP:name,JOB_VAUS_EMP_NO:no,VAUS_APPLCNT_CLSF:grade'"
+                  [displayFields]="['JOB_VAUS_EMP', 'JOB_VAUS_EMP_NO','VAUS_APPLCNT_CLSF']"
+                  [label]="'직무대행자'">
+                </app-sal-auto-complete>
+              </ui-row>
+              <ui-row>
+                <ui-datepicker-field [col-xs]="6" [col-sm]="4" [col-md]="2"
+                  [controlName]="'VAC_ST_DT'"
+                  [label]="'휴가시작일'"
+                  [desc]=""
+                  [placeholder]="''">
+                </ui-datepicker-field>
+                <ui-select-field [col-xs]="6" [col-sm]="2" [col-md]="1"
+                [controlName]="'VAC_TIME_CLS1'"
+                [datas]="[{value:'0', text:'종일'},{value:'1', text:'오전'},{value:'2', text:'오후'}]"
+                [label]="' '">
+            </ui-select-field>
+                <ui-datepicker-field [col-xs]="6" [col-sm]="4" [col-md]="2"
+                [controlName]="'VAC_END_DT'"
+                [label]="'휴가종료일'"
+                [desc]="" 
+                [placeholder]="''">
+            </ui-datepicker-field>
+            <ui-select-field [col-xs]="6" [col-sm]="2" [col-md]="1"
+                [controlName]="'VAC_TIME_CLS2'"
+                [datas]="[{value:'0', text:'종일'},{value:'1', text:'오전'},{value:'2', text:'오후'}]"
+                [label]="' '">
+            </ui-select-field>
+            <ui-numeric-textbox-field [col-xs]="6" [col-sm]="4" [col-md]="2"
+              [controlName]="'DAY_CNT'"
+              [label]="'총일수'"
+              [desc]=""
+              [placeholder]="''"
+              [rightLabel]="'일'"
+              [value]="''">
+            </ui-numeric-textbox-field>
+            <ui-numeric-textbox-field [col-xs]="6" [col-sm]="4" [col-md]="2"
+              [controlName]="'TIME_CNT'"
+              [label]="'총시간'"
+              [desc]=""
+              [placeholder]="''"
+              [rightLabel]="'시간'"
+              [value]="''">
+            </ui-numeric-textbox-field>
+              </ui-row>
+              <ui-row>
+                <ui-text-field [col-xs]="12" [col-sm]="12" [col-md]="6"
+                  [controlName]="'VAC_EMGNC_TEL_NO'"
+                  [label]="'비상연락처'"
+                  [desc]="">
+                </ui-text-field>
+                <ui-text-field [col-xs]="12" [col-sm]="12" [col-md]="6"
+                  [controlName]="'RMK'"
+                  [label]="'비고'"
+                  [desc]="">
+                </ui-text-field>
+              </ui-row>
+              <ui-row>
+                <ui-uploader2-field [col-xs]="12" [col-sm]="12" [col-md]="12"
+                  [controlName]="'ATTCH'"
+                  [label]="'첨부파일'"
+                  [readonly]="readonlyYN">
+                </ui-uploader2-field>
+              </ui-row>
+            </ui-card-body>
+          </ui-card>
+        </form>
+        <p>1. 시간제근무자/휴직/연가/퇴직예정자는 휴가신청서에 안내된 연차일수가 실제 잔여일차수와 다를 수 있으니 인사관리팀에 확인 후 사용</p>
+        <p>2. 연차휴가와 휴가신청시 증빙서류 첨부(결혼은 신청시 필수)</p>
+        <p>3. 휴가기간이 한달(30일) 이상일 경우 휴일 산입하고 휴가일수 수정하여 신청.</p>
+        <p>4. 저축한 연차 유급휴가의 사용은 1회 최소 5일 이상으로 신청하여야 하며, 잔여 일수가 5일 미만일 경우에는 잔여일수 전부를 신청하여야 함.</p>
+    <!-- </ui-row> -->
+      </div>
+    </div>
+  </ui-approval-layout2>
+</div>
