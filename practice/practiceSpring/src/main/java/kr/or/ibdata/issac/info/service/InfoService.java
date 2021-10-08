@@ -1,11 +1,11 @@
 package kr.or.ibdata.issac.info.service;
 
-import java.util.Date;
+//import java.sql.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import kr.or.ibdata.issac.info.model.VacationDAO;
+import kr.or.ibdata.issac.info.model.VacationVO;
 import kr.or.ibdata.issac.info.model.VacationDTO;
 import kr.or.ibdata.issac.info.repository.VacationRepository;
 
@@ -23,13 +23,17 @@ public class InfoService {
 		VacationDTO project = new VacationDTO();
 		project.projectName = "issac";
 		project.author = "hello-issac";
-		project.createdDate = new Date();
+//		project.createdDate = new Date();
 		
 		return project;
 	}
 	
-	public List<VacationDAO> getVacationDTOs(){
+	public List<VacationVO> getVacationDTOs(){
 		return this.vacationRepository.findList();
+	}
+	
+	public VacationVO insert(VacationVO vac) {
+		return this.vacationRepository.insert(vac);
 	}
 	
 	

@@ -2,6 +2,23 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.30.148.22:3306/databasetest?serverTimeZone=UTC&CharacterEncoding=UTF-8
+    jdbc-url: jdbc:mysql://172.30.148.22:3306/databasetest?serverTimeZone=UTC&CharacterEncoding=UTF-8
     username: issac
     password: dltkr9511$
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 5000
+      connection-init-sql: SELECT 1
+      validation-timeout: 2000
+      minimum-idle: 10
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+#hikari:
+#      maximum-pool-size : 10          // 최대 pool size (defailt 10)
+#      connection-timeout: 5000        // 
+#      connection-init-sql: SELECT 1   // 
+#      validation-timeout: 2000        // 
+#      minimum-idle: 10                // 연결 풀에서 HikariCP가 유지 관리하는 최소 유휴 연결 수
+#      idle-timeout: 600000            // 연결을위한 최대 유휴 시간
+#      max-lifetime: 1800000           // 닫힌 후 pool 에있는 connection의 최대 수명 (ms)입니다.

@@ -1,6 +1,6 @@
 package kr.or.ibdata.issac.info.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
