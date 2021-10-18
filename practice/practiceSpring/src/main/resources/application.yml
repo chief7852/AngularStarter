@@ -2,7 +2,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://172.19.238.30:3306/databasetest?serverTimeZone=UTC&CharacterEncoding=UTF-8
+    jdbc-url: jdbc:mysql://172.28.182.164:3306/databasetest?serverTimeZone=UTC&CharacterEncoding=UTF-8
     username: issac
     password: dltkr9511$
     hikari:

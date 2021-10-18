@@ -18,34 +18,33 @@ import lombok.ToString;
 @Setter
 @ToString
 public class VacationVO {
-	private Integer day_cnt;
-	private Integer dept_cd;
-	private String dept_nm;
-	private String emp_nm;
-	private Integer emp_no;
-	private String job_vaus_emp;
-	private Integer job_vaus_emp_no;
-	private Integer remndr_yryc;
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date reqst_dt;
-	private Integer reqst_no;
-	private String rmk;
-	private Integer time_cnt;
-	private String vac_applcnt_clsf;
-	private String vac_cls;
-	private Integer vac_dept_cd;
-	private String vac_dept_nm;
-	private String vac_emgnc_tel_no;
-	private String vac_emp_nm;
-	private Integer vac_emp_no;
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date vac_end_dt;
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date vac_st_dt;
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date vac_stdde;
-	private Integer vac_time_cls1;
-	private Integer vac_time_cls2;
-	private String vac_use_dt;
-	private String vaus_applcnt_clsf;
-}
+	private Integer day_cnt;                                                   // 총일수
+	private Integer dept_cd;                                                   // 신청자(부서번호)
+	private String dept_nm;                                                    // 신청자(부서명)
+	private String emp_nm;                                                     // 신청자 이름 
+	private Integer emp_no;                                                    // 신청자 번호
+	private String job_vaus_emp;                                               // 직무대행자 이름
+	private Integer job_vaus_emp_no;                                           // 직무대행자 번호
+	private Integer remndr_yryc;                                               // 잔여연차
+	private Date reqst_dt;                                                     // 신청일자
+	private Integer reqst_no;                                                  // 신청번호
+	private String rmk;                                                        // 비고
+	private Integer time_cnt;                                                  // 총시간
+	private String vac_applcnt_clsf;                                           // 휴가자직급
+	private String vac_cls;                                                    // (모르게씀)
+	private Integer vac_dept_cd;                                               // 휴가자부서코드
+	private String vac_dept_nm;                                                // 휴가자부서명
+	private String vac_emgnc_tel_no;                                           // 비상연락처
+	private String vac_emp_nm;                                                 // 휴가자 이름
+	private Integer vac_emp_no;                                                // 휴가자 번호
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")       //
+	private Date vac_end_dt;                                                   // 휴가 종료일
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")       //
+	private Date vac_st_dt;                                                    // 휴가 시작일
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")       //
+	private Date vac_stdde;                                                    // 휴가 기준일
+	private Integer vac_time_cls1;                                             // 휴가 시작일 시간
+	private Integer vac_time_cls2;                                             // 휴가 종료일 시간
+	private String vac_use_dt;                                                 // 휴가 사용 기간
+	private String vaus_applcnt_clsf;                                          // 직무 대항자 직급
+}                                                                              //
