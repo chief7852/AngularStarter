@@ -5,7 +5,8 @@
 <div class="modal-body">
   <ui-approval-layout2 [title]="'휴가신청서'">
     <div left-content>
-      <div class="page-content" [sub-responsive]="true">
+      <div class="page-content" [sub-
+responsive]="true">
         <form [formGroup]="form">
           <ui-card class="card-form" [col-md]="12">
             <ui-card-header>
