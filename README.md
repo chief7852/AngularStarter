@@ -1,4 +1,5 @@
 # AngularStarter
 starter
-##anfular and spring
-Typescript
+
+## anfular and spring
+# Typescript
