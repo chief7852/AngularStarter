@@ -1,13 +1,14 @@
+// function filter<T>(
+//   predicate: (value: T, index: number) => boolean, 
+//   thisArg?: any
+// ): MonoTypeOperatorFunction<T>;
 
-class Rion{
+import { range, pipe } from 'rxjs'
+import { filter } from 'rxjs/operators'
+
+range(1, 10)
+  .pipe(filter(x => x % 5 === 0))
+  .subscribe(x => console.log(x))
+
+
   
-}
-class Rabbit{
-
-}
-class Elephant{
-
-}
-const Animal = [new Rion(),new Rabbit(), new Elephant()];
-
-let zoo = [new Rion(), new Rabbit(), new Elephant()];

@@ -1,11 +1,10 @@
 "use strict";
-function exampleFunc(data) {
-    if (typeof data === 'string') {
-        console.log(data + '1');
-    }
-    if (typeof data === 'number') {
-        console.log(data + 1);
-    }
-}
-exampleFunc(1);
-exampleFunc('string');
+// function filter<T>(
+//   predicate: (value: T, index: number) => boolean, 
+//   thisArg?: any
+// ): MonoTypeOperatorFunction<T>;
+Object.defineProperty(exports, "__esModule", { value: true });
+var rxjs_1 = require("rxjs");
+var operators_1 = require("rxjs/operators");
+(0, rxjs_1.range)(1, 10).pipe((0, operators_1.first)(function (x, i) { return i === 3 || x === 7; })).subscribe(function (x) { return console.log(x); });
+// 4

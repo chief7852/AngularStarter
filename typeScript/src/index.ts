@@ -1,11 +1,12 @@
-function exampleFunc(data: number | string ) : void{
-  if(typeof data === 'string'){
-		console.log(data + '1');
-	}
-  if(typeof data === 'number'){
-		console.log(data + 1);
-	}
-}
+// function filter<T>(
+//   predicate: (value: T, index: number) => boolean, 
+//   thisArg?: any
+// ): MonoTypeOperatorFunction<T>;
 
-exampleFunc(1);
-exampleFunc('string');
+import { range, pipe } from 'rxjs'
+import { filter, first } from 'rxjs/operators'
+
+['a','b','c'].flatMap(function(e) {
+	return [e, e+ 'x', e+ 'y',  e+ 'z'  ];
+});
+//['a', 'ax', 'ay', 'az', 'b', 'bx', 'by', 'bz', 'c', 'cx', 'cy', 'cz']
