@@ -2,6 +2,9 @@
   <h4 class="modal-title">휴가신청서</h4>
 </div>
 
+
+
+
 <div class="modal-body">
   <ui-approval-layout2 [title]="'휴가신청서'">
     <div left-content>
