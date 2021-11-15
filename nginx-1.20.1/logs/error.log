@@ -1,0 +1,2 @@
+2021/11/15 17:16:38 [error] 34080#21988: *1 CreateFile() "D:\angularStarter\nginx-1.20.1/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/11/15 17:32:55 [notice] 28552#33120: signal process started
