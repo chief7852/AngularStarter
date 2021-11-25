@@ -24,8 +24,8 @@ declare var moment: any;
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.css'],
+  templateUrl: 'overview.component.html',
+  styleUrls: ['overview.component.css'],
   providers: [DayService, WeekService, WorkWeekService, MonthService, YearService, AgendaService,
     TimelineViewsService, TimelineMonthService, TimelineYearService, PrintService, ExcelExportService, ICalendarExportService],
   encapsulation: ViewEncapsulation.None
