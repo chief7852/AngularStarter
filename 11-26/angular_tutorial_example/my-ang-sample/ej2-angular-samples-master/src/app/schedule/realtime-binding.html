@@ -1,0 +1,20 @@
+<div class="control-section">
+  <ejs-schedule #scheduleObj width='100%' height='550px' [eventSettings]="eventSettings" [selectedDate]="selectedDate"
+    (navigating)="onNavigating($event)" (actionComplete)="onActionComplete($event)">
+  </ejs-schedule>
+</div>
+
+<div id="action-description">
+  <p>
+    이 데모는 signalR 서비스를 스케줄러 구성 요소에 바인딩하는 방법을 보여줍니다. 여기서 SignalR은 다음을 수행하는 데 사용됩니다.
+    데이터를 스케줄러로 바인딩합니다.
+  </p>
+</div>
+
+<div id="description">
+  <p>
+    이 샘플에서는 , 우리는 <code>navigating</code> 을 사용했습니다. 스케줄러 컨트롤의 뷰 변경을 호출하는 이벤트
+    action과 CRUD를 수행한 후 스케줄러 데이터 소스를 업데이트하는 이벤트
+    작업<code>actionComplete</code> 를 사용했습니다. SignalR은 해당 이벤트 호출을 위해 데이터를 바인딩합니다.
+  </p>
+</div>

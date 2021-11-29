@@ -1,0 +1,199 @@
+<div class="col-lg-12 control-section">
+  <div class="content-wrapper">
+    <div class="schedule-overview">
+      <div class="overview-header">
+        <div class="overview-titlebar">
+          <div class="left-panel">
+            <div class="schedule-overview-title" style="border: 1px solid transparent;">스케쥴러
+              연습을위한 여러가지 기능 적용
+            </div>
+          </div>
+          <div class="center-panel">
+            <button ejs-button id="timezoneBtn" cssClass="title-bar-btn" disabled='true'
+              iconCss="e-icons e-time-zone">UTC</button>
+            <button ejs-button id="timeBtn" cssClass="title-bar-btn" disabled='true' iconCss="e-icons e-clock"
+              [content]="liveTimeUpdate"></button>
+          </div>
+          <div class="right-panel">
+            <div class="control-panel calendar-export">
+              <button ejs-button id="printBtn" cssClass="title-bar-btn" iconCss="e-icons e-print"
+                (click)="onPrintCLick()">출력</button>
+            </div>
+          <div class="control-panel">
+            <ejs-uploader id='icalendar' cssClass='calemdar-import' [multiple]='multiple' [buttons]='buttons'
+              [showFileList]='showFileList' allowedExtentsions='.ics' (selected)='onSelected($event)'></ejs-uploader>
+          </div>
+          <div class="control-panel calendar-export">
+            <button ejs-dropdownbutton id="exporting" (select)="onExportClick($event)"
+              [items]='exportItems'>내보내기</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div class="overview-toolbar">
+        <div style="height: 70px; width: calc(100% - 90px);">
+          <ejs-toolbar id="toolbar_options" height="70px" overflowMode="Scrollable" scrollStep="100"
+            (created)="onToolbarCreated()" (clicked)="onToolbarItemClicked($event)">
+            <e-items>
+              <e-item prefixIcon='e-icons e-plus' tooltipText='New Event' text='New Event'>
+              </e-item>
+              <e-item prefixIcon='e-icons e-repeat' tooltipText='New Recurring Event'>
+              </e-item>
+              <e-item type='Separator'></e-item>
+              <e-item prefixIcon='e-icons e-day' tooltipText='Day' text='하루'></e-item>
+              <e-item prefixIcon='e-icons e-week' tooltipText='Week' text='한 주'></e-item>
+              <e-item prefixIcon='e-icons e-week' tooltipText='WorkWeek' text='주중'></e-item>
+              <e-item prefixIcon='e-icons e-month' tooltipText='Month' text='월간'>
+              </e-item>
+              <e-item prefixIcon='e-icons e-month' tooltipText='Year' text='연간'></e-item>
+              <e-item prefixIcon='e-icons e-agenda-date-range' tooltipText='Agenda' text='Agenda'></e-item>
+            </e-items>
+            <e-item tooltipText='Timeline Views'>
+              <<ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #viewSwitch id="timeline_views" [checked]="false"
+                      (change)="onTimelineViewChange($event)"></ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size: 14px;">타입라인 보기</div>
+                </div>
+              </ng-template>
+            </e-item>
+            <e-item type='Separator'></e-item>
+            <e-item tooltipText='Resource Grouping'>
+              <ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #groupSwitch id="grouping" [checked]="true" (change)="onGroupingChange($event)">
+                    </ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size:14px;">그룹화</div>
+                </div>
+              </ng-template>
+            </e-item>
+            <e-item tooltipText='Gridlines'>
+              <ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #gridlinesSwitch id="gridlines" [checked]="true" (change)="onGridlinesChange($event)">
+                    </ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size: 14px;">눈금선</div>
+                </div>
+              </ng-template>
+            </e-item>
+            <e-item tooltipText='Row auto Height'>
+              <ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #rowHeightSwitch id="row_auto_height" [checked]="falase"
+                      (change)="onRowAutoHeightChange($event)"></ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size: 14px;">행 자동 높이 조절</div>
+                </div>
+              </ng-template>
+            </e-item>
+            <e-item tooltipText='Tooltip'>
+              <<ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #tooltipSwitch id="tooltip" [checked]="false" (change)="onTooltipChange($event)">
+                    </ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size: 14px;">툴팁</div>
+                </div>
+              </ng-template>
+            </e-item>
+            <e-item tooltipText='Allow Multi Drag'>
+              <ng-template #template>
+                <div style="height: 46px; line-height: 23px;">
+                  <div class="icon-child" style="text-align: center;">
+                    <ejs-switch #dragSwitch id="multi_drag" [checked]="false" (change)="onAllowMultiDrag($event)">
+                    </ejs-switch>
+                  </div>
+                  <div class="text-child" style="font-size: 14px;">다중 드래그 허용</div>
+                </div>
+              </ng-template>
+            </e-item>
+          </ejs-toolbar>
+        </div>
+        <div style="height: 70px;width: 90px;">
+          <button ejs-button id="settingBtn" iconCss="e-icons e-settings" cssClass="overview-toolbar-settings"
+            iconPosition="Top" (click)="onSettingsClick($event)">설정</button>
+        </div>
+      </div>
+      <div class="overview-content">
+        <div class="left-panel">
+          <div class="overview-scheduler">
+            <ejs-schedule #scheduleObj cssClass='schedule-overview' height='100%' [group]='group'
+              [(currentView)]="currentView" timezone='UTC' [eventSettings]="eventSettings">
+              <ng-template #dateHeaderTemplate let-data>
+                <div class="date-text">{{getDateHeaderText(data.date)}}</div>
+                <div [innerHTML]="getWeatherImage(data.date)"></div>
+              </ng-template>
+              <e-views>
+                <e-view option="일간"></e-view>
+                <e-view option="주간"></e-view>
+                <e-view option="주중"></e-view>
+                <e-view option="월간"></e-view>
+                <e-view option="년간"></e-view>
+                <e-view option="의사일정"></e-view>
+                <e-view option="TimelineDay"></e-view>
+                <e-view option="TimelineWeek"></e-view>
+                <e-view option="TimelineWorkWeek"></e-view>
+                <e-view option="TimelineMonth"></e-view>
+                <e-view option="TimelineYear"></e-view>
+              </e-views>
+              <e-resources>
+                <e-resource field='CalendarId' title='Calendars' [dataSource]='resourceDataSource'
+                  [query]='resourceQuery' [allowMultiple]='allowMultiple' name='Calendars' textField='CalendarText'
+                  idField='CalendarId' colorField='CalendarColor'>
+                </e-resource>
+              </e-resources>
+              <ng-template #quickInfoTemplateHeader let-data>
+                <div class="quick-info-header">
+                  <div class="quick-info-header-content" [ngStyle]="getHeaderStyles(data)">
+                    <div class="quick-info-title">{{getHeaderTitle(data)}}</div>
+                    <div class="duration-text">{{getHeaderDetails(data)}}</div>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template #quickInfoTemplatesContent let-data>
+                <ng-container [ngTemplateOutlet]="data.elementType == 'cell' ? cellContent : eventContent"
+                  [ngTemplateOutletContext]="{data:data}"></ng-container>
+              </ng-template>
+              <ng-template #cellContent let-data="data">
+                <div class="quick-info-content">
+                  <div class="e-cell-content">
+                    <div class="content-area">
+                      <ejs-textbox #titleObj id="title" placeholder="제목"></ejs-textbox>
+                    </div>
+                    <div class="content-area">
+                      <ejs-dropdownlist id='eventType' #eventTypeObj [dataSource]='resourceDataSource'
+                        [fields]='calendarFields' placeholder='타입선택' [value]='calendarsValue[0]'
+                        popupHeighy="150pc">
+                      </ejs-dropdownlist>
+                    </div>
+                    <div class="content-area">
+                      <ejs-textbox #notesObj id="notes" placeholder="노트"></ejs-textbox>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template #eventContent let-data="data">
+                <div class="quick-info-content">
+                  <div class="event-content">
+                    <div class="meeting-type-wrap">
+                      <label>Subject</label>:
+                      <span>{{data.Subject}}</span>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ejs-schedule>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

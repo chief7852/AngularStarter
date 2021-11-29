@@ -1,0 +1,34 @@
+<div class="control-section">
+  <div class="content-wrapper schedule-wrapper">
+    <ejs-schedule #scheduleObj id="schedule" width='100%' height='650px' [group]="group" [(currentView)]="currentView"
+      [selectedDate]="selectedDate" [enableAdaptiveUI]="true" [eventSettings]="eventSettings">
+      <e-views>
+        <e-view option="Day"></e-view>
+        <e-view option="Week"></e-view>
+        <e-view option="Month"></e-view>
+      </e-views>
+      <e-resources>
+        <e-resource field='ProjectId' title='Choose Project' [dataSource]='projectDataSource'
+          [allowMultiple]='allowMultiple' name='Projects' textField='text' idField='id' colorField='color'>
+        </e-resource>
+        <e-resource field='TaskId' title='Category' [dataSource]='categoryDataSource' [allowMultiple]='allowMultiple'
+          name='Categories' textField='text' idField='id' groupIDField='groupId' colorField='color'>
+        </e-resource>
+      </e-resources>
+    </ejs-schedule>
+  </div>
+</div>
+
+<div id="action-description">
+  <p>이 데모에서는 여러 리소스가 컴팩트 뷰에서 그룹화되는 방법과 이벤트가 컴팩트 뷰에서 어떻게 표현되는지를 보여줍니다.
+스케줄러 뷰 레이아웃.</p>
+</div>
+
+<div id="description">
+  <p>
+  이 데모에서는 스케줄 보기 및 리소스 그룹화를 콤팩트 보기 모드에서 보여드렸습니다. 
+  <code>enableAdaptiveUI</code> 속성. 
+  Scheduler 보기에서는 보기를 개선하기 위해 하나의 리소스만 표시되었습니다.
+  리소스 이벤트 세부 정보를 명확하게 경험합니다.
+  </p>
+</div>
