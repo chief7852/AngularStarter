@@ -1,0 +1,31 @@
+<div id="action-description">
+    <p>
+        This sample visualizes the maximum and minimum temperatures  of different months with default range area series in the chart. Zoom the chart to check the temperature for week or day.
+    </p>
+</div>
+<div class="control-section">
+    <div align='center'>
+        <ejs-chart id='container' [chartArea]='chartArea' [width]='width' align='center' style="display:block; width: 92%" [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis] = 'primaryYAxis' [tooltip] = 'tooltip' [zoomSettings] = 'zoomSettings'
+         (load)='load($event)' (seriesRender)='seriesRender($event)' [legendSettings]='legend'>
+            <e-series-collection>
+                <e-series [dataSource]='data' [border]='border' [marker]='marker'[opacity] = 'opacity' type='RangeArea' xName='x' high = 'high' low = 'low'  name='India'> </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+</div>
+<div id='description'>
+    <p>
+        In this example, you can see how to render and configure the range area type charts. You can use <code>border</code>, <code>fill</code> properities to customize
+        the data appearance. <code>dataLabel</code> is used to represent individual data and its value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module</p>
+    <p>
+        Chart component features are segregated into individual feature-wise modules. To use Range area series feature, we need to inject
+        <code>RangeAreaSeriesService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+    <p>
+        More information on the area types series can be found in this
+        <a target="_blank" href="https://ej2.syncfusion.com/angular/documentation/chart/chart-types/#area-charts">documentation section</a>.
+    </p>
+</div>
