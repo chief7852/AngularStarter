@@ -1,0 +1,141 @@
+<style>
+    #control-container {
+            padding: 0px !important;
+        }
+
+        #material-gradient-chart stop {
+            stop-color: #00bdae;
+        }
+
+        #fabric-gradient-chart stop {
+            stop-color: #4472c4;
+        }
+
+        #bootstrap-gradient-chart stop {
+            stop-color: #a16ee5;
+        }
+
+        #material-dark-gradient-chart stop {
+            stop-color: #9ECB08;
+        }
+
+        #fabric-dark-gradient-chart stop {
+            stop-color: #4472c4;
+        }
+
+        #bootstrap-dark-gradient-chart stop {
+            stop-color: #a16ee5;
+        }
+
+        #tailwind-dark-gradient-chart stop {
+            stop-color: #8B5CF6;
+        }
+
+        #bootstrap4-gradient-chart stop {
+            stop-color: #a16ee5;
+        }
+
+        #highcontrast-gradient-chart stop {
+            stop-color: #79ECE4;
+        }
+
+        #tailwind-gradient-chart stop {
+            stop-color: #5A61F6;
+        }
+        
+        #bootstrap5-gradient-chart stop {
+            stop-color: #262E0B;
+        }
+
+        #bootstrap5-dark-gradient-chart stop {
+            stop-color: #5ECB9B;
+        }
+
+        .chart-gradient stop[offset="0"] {
+            stop-opacity: 0.9;
+        }
+
+        .chart-gradient stop[offset="1"] {
+            stop-opacity: 0.3;
+        }
+</style>
+
+<div class="control-section">
+    <div>
+        <ejs-stockchart id='stockChartPeriod' [enablePeriodSelector]='enable' [tooltip]='tooltip' [crosshair]='crosshair'
+            [chartArea]='chartArea' style="display:block;" [primaryXAxis]='primaryXAxis' (tooltipRender)='tooltipRender($event)' [primaryYAxis]='primaryYAxis' (load)='load($event)'>
+            <e-stockchart-series-collection>
+                <e-stockchart-series [dataSource]='data1' type='Area' xName='x' yName='open' fill='url(#gradient-chart)'>
+                </e-stockchart-series>
+            </e-stockchart-series-collection>
+        </ejs-stockchart>
+    </div>
+</div>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="material-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap4-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="highcontrast-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="material-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="fabric-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="tailwind-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap5-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bootstrap5-dark-gradient-chart" style="opacity: 0.75" class="chart-gradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+<div id="action-description">
+    <p>
+        This sample renders the stock chart without period selector, data's can be navigated through range selector.
+    </p>
+</div>
+<div id="description">
+    <p>
+        In this example, you can see how to render and configure the Stock chart and disable the period selector
+        <code>LineSeries</code> is used to represent selected data value.
+    </p>
+    <br>
+    <p style="font-weight: 500">Injecting Module:</p>
+    <p>Stock Chart features are segregated into individual feature-wise modules. To use Candle Series, DateTime axis in stock chart, we need to inject
+        <code>CandleSeriesService</code> and <code>DateTimeService</code> into the <code>@NgModule.providers</code> section.
+    </p>
+</div>
