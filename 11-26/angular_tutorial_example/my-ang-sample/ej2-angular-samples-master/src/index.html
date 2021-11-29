@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+    var orgin = location.origin;
+    var baseref = location.href.split('#')[0].replace(orgin, '');
+    document.write('<base href=\"' + baseref + '\">');
+    </script>
+
+    <!-- Google Tag Manager -->
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WLQL39J');</script>
+    <!-- End Google Tag Manager -->
+    <title>Essential JS 2 for Angular</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Essential JS 2 for Angular is a modern JavaScript UI toolkit that has been built from the ground up to be lightweight, responsive, modular and touch friendly. It is written in TypeScript and has no external dependencies.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="./manifest.webmanifest">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet"></link>
+    <link href="./styles/material.css" rel="stylesheet" id="themelink" />
+    <link href="./styles/index.css" rel="stylesheet" />
+    <link href="./styles/codemirror/codemirror.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/highlight.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reflect-metadata/0.1.10/Reflect.min.js"></script>
+    <script type="text/javascript">
+        if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) {
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"><\/script>');
+            document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.14/moment-timezone-with-data.min.js"><\/script>');
+            if (window.NodeList && !NodeList.prototype.forEach) {
+                NodeList.prototype.forEach = Array.prototype.forEach;
+            }
+        }
+    </script>
+</head>
+
+<body class="e-view">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLQL39J"height="0"width="0"style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div hidden id="sync-analytics" data-queue="EJ2 - Angular - Demos"></div>
+    <div class="sample-browser e-view">
+        <div class="sb-mobile-overlay sb-hide"></div>
+        <div class="sb-mobile-right-pane sb-hide">
+            <div class="sb-mobile-preference sb-hide"></div>
+            <div class="sb-mobile-prop-pane sb-hide"></div>
+            <div class="sb-mobile-right-pane-close sb-icons"></div>
+        </div>
+
+        <div id="sb-popup-section" class="sb-popups">
+            <div id="sb-switcher-popup" class="sb-switch-popup">
+                <ul id="switch-sb">
+                    <li class="sb-current">
+                        <a>Angular</a>
+                    </li>
+                    <li>
+                        <a id="ts">JavaScript</a>
+                    </li>
+                    <li>
+                        <a id="react">React</a>
+                    </li>
+                    <li>
+                        <a id="javascript">JavaScript (ES5)</a>
+                    </li>
+                    <li>
+                        <a id="asp_core">ASP.NET Core</a>
+                    </li>
+                    <li>
+                        <a id="asp_mvc">ASP.NET MVC</a>
+                    </li>
+                    <li>
+                        <a id="vue">Vue</a>
+                    </li>
+                    <li>
+                        <a id="blazor">Blazor</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="theme-switcher-popup" class="sb-theme-popup" style="padding-top: 0px;">
+                <ul id="themelist" class="options">
+                    <li class="e-list" id="bootstrap5">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Bootstrap v5</span>
+                    </li>
+                    <li class="e-list" id="bootstrap5-dark">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Bootstrap v5 Dark</span>
+                    </li>
+                    <li class="e-list" id="tailwind">
+                    <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                    <span class="switch-text">Tailwind CSS</span>
+                    </li>
+                    <li class="e-list" id="tailwind-dark">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Tailwind CSS Dark</span>
+                    </li>
+                    <li class="active e-list" id="material">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Material</span>
+                    </li>
+                    <li class="e-list" id="material-dark">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Material Dark</span>
+                    </li>
+                    <li class="e-list" id="fabric">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Fabric</span>
+                    </li>
+                    <li class="e-list" id="fabric-dark">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Fabric Dark</span>
+                    </li>
+                    <li class="e-list" id="bootstrap4">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Bootstrap v4</span>
+                    </li>
+                    <li class="e-list" id="bootstrap">
+                        <span class="sb-icons sb-theme-select sb-icon-icon-selection"></span>
+                        <span class="switch-text">Bootstrap</span>
+                    </li>
+                    <li class="e-list" id="bootstrap-dark">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">Bootstrap Dark</span>
+                    </li>
+                    <li class="e-list" id="highcontrast">
+                        <span class='sb-icons sb-theme-select sb-icon-icon-selection'></span>
+                        <span class="switch-text">High Contrast</span>
+                    </li>
+                </ul>
+                  <div class="sb-theme-studio"><a target="_blank" href="https://ej2.syncfusion.com/themestudio/?theme=material">Go to Theme Studio</a></div>
+            </div>
+            <div id="settings-popup" class="sb-setting-popup">
+                <div class="sb-setting-header">
+                    <span> Preferences
+                    </span>
+                </div>
+                <div class="sb-setting-content">
+                    <div class="sb-setting-item sb-setting-theme-section">
+                        <div class="setting-label">
+                            <div class="sb-icons sb-setting-icons sb-icon-Palette"></div>
+                            <div class="sb-setting-text">Theme Selection</div>
+                        </div>
+                        <div class="setting-content  setting-theme-change">
+                            <select id="sb-setting-theme" class="sb-setting-theme-select">
+                                <option value="bootstrap5">Bootstrap v5</option>
+                                <option value="bootstrap5-dark">Bootstrap v5 Dark</option>
+                                <option value="tailwind">Tailwind CSS</option>
+                                <option value="tailwind-dark">Tailwind CSS Dark</option>
+                                <option value="material">Material</option>
+                                <option value="material-dark">Material Dark</option>
+                                <option value="fabric">Fabric</option>
+                                <option value="fabric-dark">Fabric Dark</option>
+                                <option value="bootstrap4">Bootstrap v4</option>
+                                <option value="bootstrap">Bootstrap</option>
+                                <option value="bootstrap-dark">Bootstrap Dark</option>
+                                <option value="highcontrast">High Contrast</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="sb-setting-item sb-responsive-section">
+                        <div class="setting-label">
+                            <div class="sb-icons sb-setting-icons sb-icon-Responsive"></div>
+                            <div class="sb-setting-text">Mode Selection</div>
+                        </div>
+                        <div class="setting-content btn-group setting-responsive">
+                            <div id="touch" class="sb-responsive-items set-border-radious-touch">Touch</div>
+                            <div id="mouse" class="sb-responsive-items active set-border-radious-mouse">Mouse</div>
+                        </div>
+                    </div>
+                    <div class='sb-setting-item sb-setting-culture'>
+                        <div class='setting-label'>
+                            <div class='sb-icons sb-setting-icons sb-icon-Localization'></div>
+                            <div class='sb-setting-text'>Localization</div>
+                        </div>
+                        <div class='setting-content'>
+                            <select id='sb-setting-culture' class='sb-setting-culture-select'>
+                                <option value="en">English</option>
+                                <option value="de">German - Germany*</option>
+                                <option value="fr-CH">French - Switzerland*</option>
+                                <option value="ar">Arabic*</option>
+                                <option value="zh">Chinese - China*</option>
+                            </select>
+                        </div>
+                        <div class="sb-setting-translate">
+                            <span>* Translated by Google Translator</span>
+                        </div>
+                    </div>
+                    <div class='sb-setting-item sb-setting-currency'>
+                        <div class='setting-label'>
+                            <div class='sb-icons sb-setting-icons sb-icon-Currency'></div>
+                            <div class='sb-setting-text'>Currency</div>
+                        </div>
+                        <div class='setting-content'>
+                            <select id='sb-setting-currency' class='sb-setting-currency-content'>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="AED">AED</option>
+                                <option value="CHF">CHF</option>
+                                <option value="CNY">CNY</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <ng-app class="sb-content e-view"></ng-app>
+    </div>
+
+</body>
+
+</html>
